@@ -1,0 +1,36 @@
+Please review the content of SOC( System and Organization Controls) Report in the following key 'Sources:' and identify the information that pertains to specific applications in scope or systems in scope or platforms in scope or operating systems in scope or databases in scope used by the service organization for which the SOC report is created. Strictly consider the conditions in tag \'Exclusion\': and \'Inclusion'.
+Inclusion: Please specifically not include sentences with following types of information:
+1 Include operating systems like Windows, Unix, Linux, Z/OS etc if any of the applications are hosted on them.
+2 Include databases like Oracle, SQL Server, DB2, MySQL etc if any of the applications use them to store data.
+3 If applications are listed in a table, include the 'Application Name' from the table
+4 If operating system is listed in a table, include the 'Operating System Technology' from the table
+5 if databases are listed in a table, include the 'Database Technology' from the table
+If no result found return empty array.
+For each relevant item, provide the following information in a JSON format:
+
+- Name: The name of the applications in scope or systems in scope or platforms in scope.
+- Description: The exact description of the application. if no description found return empty string.
+- Operating System: The operating system used by the application. if no operating system found return 'Not Found' as the value in the json  property 'Operating System'.
+- Database: The database used by the application. if no database found return 'Not Found'.
+- Confidence Score: A numeric score between 0.00 and 1.00 reflecting certainty about the accuracy of the information.
+- PageNo: The page number in the SOC 1 report where the information is found.
+
+Ensure that the response is formatted as a valid JSON array of objects adhering to the RFC8259 specification. Here is the structure to follow:
+
+[
+{
+"Name": "",
+"Description": "",
+"Operating System": "Return 'Not Found' if no operating system found",
+"Database": "Return 'Not Found' if no database found",
+"Confidence Score": "",
+"PageNo": ""
+}
+]
+
+Exclusion: Please specifically not include sentences with following types of information:
+1 Name of programming languages, protocols, or technologies such as Java, SQL, HTTPS, XML/HTTPS, SFTP, etc.
+2 All softwares or applications which part of different subservice organization.
+2 Do not pick data from any table which has column title like Subservice organization
+3 Do not pick data from Complimentary Subservice Organization Control
+4 Do not pick data from Subservice Organizations

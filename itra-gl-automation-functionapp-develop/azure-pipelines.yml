@@ -1,0 +1,120 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+   branches:
+       include:
+       - InitialBranch
+       - master
+       - develop
+       - QA
+  
+   paths:
+       include:
+       - 
+
+pr: none
+variables:
+    isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/develop')]
+    isQA: $[eq(variables['Build.SourceBranch'], 'refs/heads/QA')]
+    isUAT: $[eq(variables['Build.SourceBranch'], 'refs/heads/UAT')]
+
+stages:
+   - stage: Build
+     pool:
+        vmImage: 'ubuntu-latest'
+     jobs:
+       - job: Build
+           
+         steps:
+         - bash: |
+            if [ -f extensions.csproj ]
+            then
+                dotnet build extensions.csproj --output ./bin
+            fi
+           displayName: 'Build extensions'
+
+         - task: UsePythonVersion@0
+           displayName: 'Use Python 3.10'
+           inputs:
+             versionSpec: 3.10
+         
+         - bash: |
+            python -m venv worker_venv
+            source worker_venv/bin/activate
+            pip install setuptools
+            pip install --target="$(System.DefaultWorkingDirectory)/.python_packages/lib/site-packages" -r requirements.txt
+           displayName: 'Install Application Dependencies'
+         
+         - task: ArchiveFiles@2
+           displayName: 'Archive files'
+           inputs:
+             rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+             includeRootFolder: false
+         
+         - task: PublishBuildArtifacts@1
+           displayName: 'Publish Artifact: drop'
+           inputs:
+             PathtoPublish: '$(build.artifactstagingdirectory)'
+           condition: succeededOrFailed()
+
+   - stage: DeployDevYAML
+     displayName: 'Deploy to development'
+     dependsOn: Build
+     condition: and(succeeded(), eq(variables.isMain, 'true'))
+     pool:
+         vmImage: 'ubuntu-latest'          
+     jobs:
+      - deployment:
+        
+        variables:
+           - group : 'itra-gl-automation-functionapp-dev'
+
+        environment: 'itra-gl-automation-functionapp-dev'
+        strategy:
+         runOnce:
+           deploy:
+               steps:                   
+                   - task: DownloadPipelineArtifact@2
+                     inputs:
+                       downloadPath: '$(System.DefaultWorkingDirectory)'
+                       patterns: '**/*'
+                        
+                   - task: AzureFunctionApp@1
+                     displayName: 'Deploy Azure Function App'
+                     inputs:
+                       azureSubscription: '956ed430-e0c9-453d-982e-9c3214c5ff36'
+                       appType: 'functionAppLinux'
+                       appName: '107glautomation'
+                       runtimeStack: 'PYTHON|3.10'
+   - stage: DeployQAYAML
+     displayName: 'Deploy to QA'
+     dependsOn: Build
+     condition: and(succeeded(), eq(variables.isQA, 'true'))
+     pool:
+         vmImage: 'ubuntu-latest'          
+     jobs:
+      - deployment:
+        
+        variables:
+           - group : 'itra-gl-automation-functionapp-qa'
+
+        environment: 'itra-socr-functionapp-qa'
+        strategy:
+         runOnce:
+           deploy:
+               steps:                   
+                   - task: DownloadPipelineArtifact@2
+                     inputs:
+                       downloadPath: '$(System.DefaultWorkingDirectory)'
+                       patterns: '**/*'
+                        
+                   - task: AzureFunctionApp@1
+                     displayName: 'Deploy Azure Function App'
+                     inputs:
+                       azureSubscription: '956ed430-e0c9-453d-982e-9c3214c5ff36'
+                       appType: 'functionAppLinux'
+                       appName: '107glautomationqa'
+                       runtimeStack: 'PYTHON|3.10'

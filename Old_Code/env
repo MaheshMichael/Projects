@@ -1,0 +1,132 @@
+[
+  {
+    "name": "107glautomation_STORAGE",
+    "value": "DefaultEndpointsProtocol=https;AccountName=uscdadvecnsta01;AccountKey=fdVJAjp8SUHpoyd8GmPe0RnnFDVwgHjTZuyQ4fXY1/VgvOrP7KOnaje9RqqyIIn6uJE6kPLXqrYWngIFgV024A==;EndpointSuffix=core.windows.net",
+    "slotSetting": false
+  },
+  {
+    "name": "APIURL",
+    "value": "https://uscdadvecnwap0k.azurewebsites.net/api/DocumentsCallback",
+    "slotSetting": false
+  },
+  {
+    "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+    "value": "InstrumentationKey=c718cd20-84a8-4483-b375-204a605c6e66;IngestionEndpoint=https://centralus-2.in.applicationinsights.azure.com/;LiveEndpoint=https://centralus.livediagnostics.monitor.azure.com/;ApplicationId=786e6518-5b59-4b1b-b1a7-cf623ab6ac17",
+    "slotSetting": false
+  },
+  {
+    "name": "AzureWebJobsStorage",
+    "value": "DefaultEndpointsProtocol=https;AccountName=uscdadvecnrsg01bc03;AccountKey=u5WMmaCvxLl4oKc4hAGp+hKcg9QcDnZ4zRPaRwy+ZUaQCOFtthxdEoDOtj4RdMGW5/aBfF8SLMtW+AStwZ8iPQ==;EndpointSuffix=core.windows.net",
+    "slotSetting": false
+  },
+  {
+    "name": "DBName",
+    "value": "USCDADVRANSDB4G",
+    "slotSetting": false
+  },
+  {
+    "name": "DBPASSWORD",
+    "value": "+Cj8Jba*oreR#x8si3s~FKKkMW6p)d0+",
+    "slotSetting": false
+  },
+  {
+    "name": "DBSERVER",
+    "value": "uscdadvecnsql01.database.windows.net",
+    "slotSetting": false
+  },
+  {
+    "name": "DBUSER",
+    "value": "dbWSS",
+    "slotSetting": false
+  },
+  {
+    "name": "FUNCTIONS_EXTENSION_VERSION",
+    "value": "~4",
+    "slotSetting": false
+  },
+  {
+    "name": "FUNCTIONS_WORKER_RUNTIME",
+    "value": "python",
+    "slotSetting": false
+  },
+  {
+    "name": "KEYVAULT_NAME",
+    "value": "USCDADVECNAKV01",
+    "slotSetting": false
+  },
+  {
+    "name": "SOC_AI_SEARCH_ENDPOINT",
+    "value": "https://uscdadvecnazs01.search.windows.net/",
+    "slotSetting": false
+  },
+  {
+    "name": "SOC_AI_SERACH_INDEX_NAME",
+    "value": "aiindex",
+    "slotSetting": false
+  },
+  {
+    "name": "SOC_DOCUMENTS_BLOB_CONNECTION_STRING",
+    "value": "DefaultEndpointsProtocol=https;AccountName=uscdadvecndl201;AccountKey=Z6SAVoi+jcapu6EVpJzN0/kbMNvNrp3nysdX3Xrw93pwRcBjKIAvEJgN6JKj7Y+s0TNpxcJNYpfMg9u2QFnRhQ==;EndpointSuffix=core.windows.net",
+    "slotSetting": false
+  },
+  {
+    "name": "SOC_DOCUMENTS_QUEUE_CONNECTION_STRING",
+    "value": "DefaultEndpointsProtocol=https;AccountName=uscdadvecnsta01;AccountKey=LFRUe2/ClpmEdhAZmS1/bXuof+nI1tMJgWjunBCXkOTywcn7mA9h/c07KzAXvZCjaqfiFJU7DvtN626OCp8IZQ==;EndpointSuffix=core.windows.net",
+    "slotSetting": false
+  },
+  {
+    "name": "SOC_OPEN_AI_DEPLOYMENT_NAME",
+    "value": "text-embedding-ada-002",
+    "slotSetting": false
+  },
+  {
+    "name": "SOC_OPEN_AI_SERVICE_NAME",
+    "value": "frccoai0ucaoa01",
+    "slotSetting": false
+  },
+  {
+    "name": "SOC_OPENAI_ENDPOINT",
+    "value": "https://frccoai0ucaoa01.openai.azure.com",
+    "slotSetting": false
+  },
+  {
+    "name": "SOC_OPENAI_ORGANIZATION",
+    "value": "frccoai0ucaoa01",
+    "slotSetting": false
+  },
+  {
+    "name": "SOCR_DOCUMENTS_CONTAINER",
+    "value": "itra-socr-documents",
+    "slotSetting": false
+  },
+  {
+    "name": "StorageAccountConnectionString",
+    "value": "DefaultEndpointsProtocol=https;AccountName=uscdadvecnsta01;AccountKey=fdVJAjp8SUHpoyd8GmPe0RnnFDVwgHjTZuyQ4fXY1/VgvOrP7KOnaje9RqqyIIn6uJE6kPLXqrYWngIFgV024A==;EndpointSuffix=core.windows.net",
+    "slotSetting": false
+  },
+  {
+    "name": "StorageAccountContainerName",
+    "value": "socdocuements",
+    "slotSetting": false
+  },
+  {
+    "name": "StorageQueueConnectionString",
+    "value": "DefaultEndpointsProtocol=https;AccountName=uscdadvecnsta01;AccountKey=LFRUe2/ClpmEdhAZmS1/bXuof+nI1tMJgWjunBCXkOTywcn7mA9h/c07KzAXvZCjaqfiFJU7DvtN626OCp8IZQ==;EndpointSuffix=core.windows.net",
+    "slotSetting": false
+  },
+  {
+    "name": "TableStorageConnectionString",
+    "value": "DefaultEndpointsProtocol=https;AccountName=uscdadvecndl201;AccountKey=tCDuU9OyDBX021P7pfJXq5jQH4JixkNa0LSbJ0GnAqukVHam5QPIZIU3526043noEsjENPX9yRW8S7ib4MES0Q==;EndpointSuffix=core.windows.net",
+    "slotSetting": false
+  },
+  {
+    "name": "WEBSITE_ENABLE_SYNC_UPDATE_SITE",
+    "value": "true",
+    "slotSetting": false
+  },
+  {
+    "name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
+    "value": "true",
+    "slotSetting": false
+  }
+]

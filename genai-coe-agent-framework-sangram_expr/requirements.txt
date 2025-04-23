@@ -1,0 +1,9 @@
+autogen-agentchat~=0.2
+autogen-agentchat[retrievechat]~=0.2
+azure-ai-formrecognizer
+azure-search-documents
+azure-storage-blob
+azure-identity
+tqdm
+langchain-text-splitters
+Jinja2

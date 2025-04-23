@@ -1,0 +1,6 @@
+python-dotenv
+openai
+azure-ai-documentintelligence
+python-pptx
+python-docx
+streamlit==1.43.2

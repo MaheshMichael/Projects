@@ -1,0 +1,48 @@
+{
+    "sections": [
+        {
+            "section_title": "Basis of Analysis",
+            "section_content": "The analysis is based on the Polish CIT Act, the Polish-______ Double Taxation Treaty (DTT), and the OECD Model Tax Convention. Additional considerations include the latest tax rulings by the Ministry of Finance and OECD recommendations on BEPS Actions."
+        },
+        {
+            "section_title": "Risk of Permanent Establishment (PE)",
+            "section_content": [
+                "The Individual's activities may not create a PE as there is no fixed place of business in Poland.",
+                "Risks include the possibility of tax authorities challenging the absence of a PE in Poland.",
+                "The Individual's activities are of an auxiliary and preparatory nature and should not be an essential part of the Company's business."
+            ]
+        },
+        {
+            "section_title": "Polish CIT Act on PE",
+            "section_content": "Under the Polish CIT Act, only income earned within the territory is taxed. A PE can be formed if an entity has a permanent establishment such as a branch in Poland, or if someone acts in Poland on the Company\u2019s behalf with the authority to conclude contracts."
+        },
+        {
+            "section_title": "Polish\u2013______ DTT on PE",
+            "section_content": [
+                "The DTT follows OECD rules and is relevant if there is a fixed place of business through which business is partially or wholly conducted.",
+                "PE includes places of management or branches exceeding 12 months in operation.",
+                "Certain activities, like storage or auxiliary work, are exceptions to being classified as a PE."
+            ]
+        },
+        {
+            "section_title": "Fixed Place of Business",
+            "section_content": "A fixed PE implies a permanent space or access to premises such as a branch or office. The Company in Poland has no fixed place since work is home-based and flexible, further supporting no PE establishment."
+        },
+        {
+            "section_title": "Auxiliary/Preparatory Nature",
+            "section_content": "Activities of the Individual are non-core to the Company's main operations, focusing on product presentation without directly influencing profits. Such activities are viewed as auxiliary or preparatory, exempting them from creating a PE."
+        },
+        {
+            "section_title": "Dependent Agent Considerations",
+            "section_content": "A PE may be created if an agent acts on behalf of the Company to conclude contracts. However, the Individual holds no power of attorney to act on behalf of the Company, supporting no creation of a PE."
+        },
+        {
+            "section_title": "Disclaimer and Limitations",
+            "section_content": [
+                "The memo covers tax matters only and not legal or accounting implications.",
+                "Opinions are advisory and not binding on Tax Authorities.",
+                "Future changes in tax legislation or facts may require re-evaluation of this analysis."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Document</title>
+</head>
+<body>
+    <h1>Chat with Document</h1>
+    <form id="chat-form">
+        <input type="text" name="message" placeholder="Ask a question about the document..." required>
+        <input type="submit" value="Send">
+    </form>
+    <div id="chat-log"></div>
+
+    <script>
+        const form = document.getElementById('chat-form');
+        const chatLog = document.getElementById('chat-log');
+
+        form.onsubmit = async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const message = formData.get('message');
+
+            // Display user message
+            chatLog.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
+
+            // Send message to the server
+            const response = await fetch('/chat', {
+                method: 'POST',
+                body: formData
+            });
+            const assistantResponse = await response.text();
+
+            // Display assistant response
+            chatLog.innerHTML += `<p><strong>Assistant:</strong> ${assistantResponse}</p>`;
+                       // Clear the input field after sending the message
+                       form.reset();
+        };
+    </script>
+</body>
+</html>

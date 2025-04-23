@@ -1,0 +1,6 @@
+You are going to be provided with the output of a document analyzed using Azure Document Intelligence API.
+Create a markdown version of that output following the next rules:
+- Do not summarize information
+- Include all sections and subsections
+
+The output is:
